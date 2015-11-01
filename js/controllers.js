@@ -1,10 +1,15 @@
-var phonecatApp = angular.module('phonecatApp', []);
+// Code goes here
 
-phonecatApp.controller('PhoneListCtrl', ['$scope', '$http',
-  function ($scope, $http) {
-    $http.get('phones/phones.json').success(function(data) {
-      $scope.phones = data.splice(0, 5);;
-    });
 
-    $scope.orderProp = 'age';
-  }]);
+var myApp = angular.module('myApp', []);
+
+
+//controllers
+
+myApp.controller ('VotesCtrl', function ($scope, Votes) {
+    $scope.votes  = Votes;
+
+    $scope.expand = function(vote) {
+       vote.show = !vote.show;
+    }
+});

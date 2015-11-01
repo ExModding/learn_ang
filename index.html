@@ -1,56 +1,37 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="webApp">
 <head>
   <meta charset="utf-8">
   <title>My HTML File - {{query}}</title>
+   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
-    <script src="js/controllers.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
+
+  <script src="js/app.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
-<p>Hello, {{name}}!</p>
-{{orderProp}}
-<p>Current query: {{query}}</p>
 
+  <body ng-controller="VotesCtrl">
+    <div>
+      <table class="table table-bordered">
+        <tr>
+          <th>Field_1</th>
+          <th>Field_2</th>
+          <th>Field_3</th>
+          <th>Field_4</th>
+          <th>October</th>
+          <th>November</th>
+          <th>December</th>
+        </tr>
+        <tr ng-repeat="vote in votes">
+          <td colspan="7"  ng-click="expand(vote)">{{vote.ip}}</td>
+        </tr>
+        <tr ng-show="vote.show"><td></td><td> {{vote.created}} </td>
+        </tr>
 
-
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
-
-Search: <input ng-model="query">
-<br>
-Sort by:
-<select ng-model="orderProp">
-  <option value="name">Alphabetical</option>
-  <option value="age">Newest</option>
-  <option value="-age">Oldest</option>
-</select>
-
-
-        <ul class="phones">
-          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
-            <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-            <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-            <p>{{phone.snippet}}</p>
-          </li>
-        </ul>
-
+        </table>
     </div>
-  </div>
-</div>
+  </body>
 
-
-
-
-
-
-
-
-
-
-</body>
 </html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "Field_1": "Bla-bla",
+    "Field_2": "rrr-rrr",
+    "Field_3": "eee-eee",
+    "Field_4": "fff-fff",
+    "October": "567",
+    "November": "567",
+    "December": "567"
+    },
+    {
+    "id": "2",
+    "Field_1": "ddd-ddd",
+    "Field_2": "rrr-rrr",
+    "Field_3": "qqq-qqq",
+    "Field_4": "jjj-jjj",
+    "October": "234234",
+    "November": "24234",
+    "December": "77777"
+    }
+]
