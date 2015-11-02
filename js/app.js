@@ -59,7 +59,8 @@
 
 
     $scope.checkName = function(data) {
-        if (angular.isNumber(data)) {
+        if (data != 10) {
+            console.log('you clicked on', angular.isNumber(data))
             return "Value should be 444";
         }
     };
