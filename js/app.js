@@ -33,24 +33,25 @@
   {Fields:"Texas",February:268581,March:26448193}
   ];
 
+      $scope.templ= '<div ng-controller="TreeGridController"><a href="#" editable-text="row.branch[col.field]" onbeforesave="checkName($data)">{{row.branch[col.field]}}</a></div>';
+    $scope.templ_1 = '<tree-grid tree-data="treegrid" col-defs="col_defs" template-url="template.html"></tree-grid>';
 
     $scope.tree_data = tree_data;
     $scope.my_tree = tree = {};
     $scope.expanding_property = "Fields";
     $scope.col_defs = [
-    	{ field: "January", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-    	{ field: 'February', cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}},{{my_tree.tree_data}} </a>',
-        cellTemplateScope: $scope.tree_data},
-    	{ field: "March", cellTemplate: '<a href="#" editable-text="{{tree_data[0]}}" onbeforesave="checkName($data)">{{row.branch[col.field]}}</a>'},
-        { field: "April", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "May", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "June", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "July", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "August", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "September", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "October", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "November", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'},
-        { field: "December", cellTemplate: '<a href="#" editable-text="row.branch[col.field]">{{row.branch[col.field]}}</a>'}
+    	{ field: "January", cellTemplate: $scope.templ},
+    	{ field: 'February', cellTemplate: $scope.templ},
+    	{ field: "March", cellTemplate: $scope.templ},
+        { field: "April", cellTemplate: $scope.templ},
+        { field: "May", cellTemplate: $scope.templ},
+        { field: "June", cellTemplate: $scope.templ},
+        { field: "July", cellTemplate: $scope.templ},
+        { field: "August", cellTemplate: $scope.templ},
+        { field: "September", cellTemplate: $scope.templ},
+        { field: "October", cellTemplate: $scope.templ},
+        { field: "November", cellTemplate: $scope.templ},
+        { field: "December", cellTemplate: $scope.templ}
     ];
     $scope.my_tree_handler = function(branch){
     	console.log('you clicked on', branch, $scope)
@@ -58,7 +59,7 @@
 
 
     $scope.checkName = function(data) {
-        if (data !== '444') {
+        if (angular.isNumber(data)) {
             return "Value should be 444";
         }
     };
