@@ -1,4 +1,4 @@
-  var app, deps;
+ var app, deps;
 
   deps = ['treeGrid', 'xeditable'];
 
