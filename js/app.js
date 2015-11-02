@@ -8,7 +8,7 @@
   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 });
 
-  app.controller('treeGridController', function($scope, $timeout, $http) {
+  app.controller('TreeGridController', function($scope, $timeout, $http) {
     var tree;
 
     var tree_data = [
@@ -32,7 +32,6 @@
   },
   {Fields:"Texas",February:268581,March:26448193}
   ];
-
 
 
     $scope.tree_data = tree_data;
@@ -71,8 +70,4 @@
 
 
   });
-
-
-
-
 
